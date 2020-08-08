@@ -1,4 +1,5 @@
 const express = require('express')
+const chalk = require('chalk')
 require('../src/db/mongoose')
 const userRouter = require('./router/user')
 const taskRouter = require('./router/task')
@@ -15,7 +16,7 @@ app.use('/', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log('Server is up on port '+ port)
+    console.log(chalk.green('Server is up on port ') + port)
 })
 
 const Task = require('./models/task')
