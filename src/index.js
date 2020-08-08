@@ -10,6 +10,10 @@ app.use(express.json())
 app.use(userRouter)
 app.use(taskRouter)
 
+app.use('/', (req, res) => {
+    res.send('Task Manager API Started')
+})
+
 app.listen(port, () => {
     console.log('Server is up on port '+ port)
 })
